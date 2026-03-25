@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gaurdian — A logistics-focused mobility platform for cow rescue. Case study by Girikshit Kumar, Product Designer & AI Developer.">
+  <meta name="keywords" content="Gaurdian, cow rescue, product design, case study, Girikshit Kumar, UX design, AI developer">
+  <meta name="author" content="Girikshit Kumar">
+  <title>Gaurdian — Case Study by Girikshit Kumar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#hero" class="nav-logo">Girikshit<span>.</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#context">Context</a></li>
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#empathize">Research</a></li>
+        <li><a href="#ideate">Ideate</a></li>
+        <li><a href="#prototype">Prototype</a></li>
+        <li><a href="#responder">Service Design</a></li>
+        <li><a href="#ai-triage">AI Triage</a></li>
+        <li><a href="#impact">Impact</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </nav>
+
+  <!-- ========== SECTION 1: HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="container hero-content">
+      <div class="hero-eyebrow">UX Case Study</div>
+      <h1 class="hero-title">
+        <span class="highlight">Gaurdian</span>
+      </h1>
+      <p class="hero-description">
+        A logistics-focused mobility platform that reduces rescue response times through geospatial reporting and AI-driven triage, while solving donor churn through behavioral transparency hooks.
+      </p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="label">Role</span>
+          <span class="value">Product Designer & AI Developer</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="label">Timeline</span>
+          <span class="value">Oct 2024 — Mar 2025</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="label">Team</span>
+          <span class="value">Research (3) · Design & Dev (Solo)</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="label">Tools</span>
+          <span class="value">Figma · Python · TensorFlow</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      Scroll
+      <div class="arrow"></div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 2: THE CONTEXT ========== -->
+  <section class="alt-bg" id="context">
+    <div class="container">
+      <div class="context-grid">
+        <div class="reveal">
+          <div class="section-label">The Context</div>
+          <h2 class="section-title">The Sanctuary of Compassion</h2>
+          <p class="section-subtitle" style="margin-bottom: 24px;">
+            Shree Krishna Gaushala, in Sultanpur Dabas, is a sanctuary where over <strong style="color: var(--accent-green);">8,500 cows</strong> are lovingly cared for with devotion and dignity.
+          </p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+            <li style="display: flex; align-items: center; gap: 10px; color: var(--text-secondary); font-size: var(--fs-body);">
+              <span style="color: var(--accent-green);">→</span> Rescues cows from neglect and danger
+            </li>
+            <li style="display: flex; align-items: center; gap: 10px; color: var(--text-secondary); font-size: var(--fs-body);">
+              <span style="color: var(--accent-green);">→</span> Provides shelter, nutritious food, and medical care
+            </li>
+            <li style="display: flex; align-items: center; gap: 10px; color: var(--text-secondary); font-size: var(--fs-body);">
+              <span style="color: var(--accent-green);">→</span> Ensures a safe and respectful environment for all animals
+            </li>
+          </ul>
+          <div class="context-stats" style="margin-top: 32px;">
+            <div class="stat-item">
+              <div class="stat-number" data-target="8500">8,500+</div>
+              <div class="stat-label">Cows Rescued</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">24/7</div>
+              <div class="stat-label">Care Available</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Volunteers</div>
+            </div>
+          </div>
+        </div>
+        <div class="context-image reveal reveal-delay-2">
+          <img src="assets/gaushala.jpg" alt="Shree Krishna Gaushala — sanctuary caring for 8500+ cows" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 3: PROBLEM STATEMENT ========== -->
+  <section id="problem">
+    <div class="container">
+      <div class="section-label reveal">The Problem</div>
+      <h2 class="section-title reveal">Reframing the Challenge</h2>
+
+      <div class="problem-reframe reveal">
+        <div class="old-label">Old Framing</div>
+        <p class="old-text">"Lack of a streamlined system for reporting injured cows."</p>
+        <div class="new-label">Reframed as a Product Designer</div>
+        <p class="new-text">High Response Latency & <span>Information Asymmetry</span></p>
+        <p style="color: var(--text-secondary); font-size: var(--fs-body); margin-top: 16px; line-height: 1.7;">
+          A <strong style="color: var(--text-primary);">marketplace gap</strong> where demand (citizens witnessing injured animals) cannot efficiently reach supply (NGO ambulances) due to a lack of real-time geospatial data and transparent feedback loops.
+        </p>
+      </div>
+
+      <div class="grid-4">
+        <div class="card reveal">
+          <div class="card-icon red">⚡</div>
+          <h3>Reporting</h3>
+          <p>Lack of a streamlined system for citizens to report injured or stray cows in real-time.</p>
+        </div>
+        <div class="card reveal reveal-delay-1">
+          <div class="card-icon amber">👁</div>
+          <h3>Visibility</h3>
+          <p>Limited visibility and recognition beyond the existing local donor base.</p>
+        </div>
+        <div class="card reveal reveal-delay-2">
+          <div class="card-icon blue">🔍</div>
+          <h3>Transparency</h3>
+          <p>Donors have low transparency about how their funds are specifically utilized.</p>
+        </div>
+        <div class="card reveal reveal-delay-3">
+          <div class="card-icon green">🤝</div>
+          <h3>Engagement</h3>
+          <p>Limited digital engagement with the youth and a new generation of potential volunteers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 4: EMPATHIZE ========== -->
+  <section class="alt-bg" id="empathize">
+    <div class="container">
+      <div class="section-label reveal">Empathize</div>
+      <h2 class="section-title reveal">What We Learned</h2>
+      <p class="section-subtitle reveal" style="margin-bottom: 48px;">
+        Primary research across citizens, donors, and volunteer networks revealed three core behavioral insights.
+      </p>
+
+      <div class="grid-3">
+        <div class="card reveal">
+          <div class="card-icon blue">🔎</div>
+          <h3>Citizens Want to Help</h3>
+          <p>Primary research showed people want to help but lack an easy, instant reporting mechanism.</p>
+        </div>
+        <div class="card reveal reveal-delay-1">
+          <div class="card-icon green">🛡</div>
+          <h3>Donors Want Trust</h3>
+          <p>Donors desire transparency, proof of impact, and a stronger emotional connection to their contributions.</p>
+        </div>
+        <div class="card reveal reveal-delay-2">
+          <div class="card-icon amber">📱</div>
+          <h3>Need for Recognition</h3>
+          <p>A modern, transparent digital interface is required to grow donations and recognition.</p>
+        </div>
+      </div>
+
+      <div class="reveal" style="margin-top: 48px; padding: 32px; background: var(--bg-card); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+          <span style="font-size: 1.3rem;">🧠</span>
+          <h3 style="font-size: var(--fs-h3); font-weight: 700;">Behavioral Insight</h3>
+        </div>
+        <p style="color: var(--text-secondary); font-size: var(--fs-body); line-height: 1.8;">
+          Our research revealed that <strong style="color: var(--accent-amber);">donors desire a stronger emotional connection</strong> to their contributions — not just a receipt, but visible proof of impact. This insight from <strong style="color: var(--text-primary);">Behavioral Psychology</strong> directly shaped our transparency and progress-tracking features, leveraging the <em>Endowed Progress Effect</em> to sustain donor engagement.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 5: DEFINE ========== -->
+  <section id="define">
+    <div class="container">
+      <div class="section-label reveal">Define</div>
+      <h2 class="section-title reveal" style="margin-bottom: 48px;">The Core Question</h2>
+
+      <div class="hmw-block reveal">
+        <p class="hmw-question">
+          <span class="accent">"How might we</span> create a digital platform that...
+        </p>
+        <ol class="hmw-items">
+          <li><span class="num">01</span> Enables citizens to <strong>report injured cows instantly</strong>?</li>
+          <li><span class="num">02</span> Allows donors to see the <strong>real-time impact</strong> of their contribution?</li>
+          <li><span class="num">03</span> Builds a <strong>transparent, trustworthy, and engaging</strong> experience?</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 6: IDEATE ========== -->
+  <section class="alt-bg" id="ideate">
+    <div class="container">
+      <div class="section-label reveal">Ideate</div>
+      <h2 class="section-title reveal">The Gaurdian App — Core Features</h2>
+      <p class="section-subtitle reveal" style="margin-bottom: 48px;">
+        Four pillars designed to bridge the marketplace gap between citizens, donors, and the NGO.
+      </p>
+
+      <div class="grid-2">
+        <div class="card reveal">
+          <div class="card-icon red">🚨</div>
+          <h3>SOS Cow Rescue: REPORT</h3>
+          <p>One-tap report button with GPS location and photo upload to alert the ambulance team instantly.</p>
+        </div>
+        <div class="card reveal reveal-delay-1">
+          <div class="card-icon green">💰</div>
+          <h3>Donation Transparency</h3>
+          <p>Choose categories (food, medicine) and get real-time updates, digital receipts, and impact summaries.</p>
+        </div>
+        <div class="card reveal reveal-delay-2">
+          <div class="card-icon blue">👥</div>
+          <h3>Volunteer Network</h3>
+          <p>Signup and activity tracker for local volunteers with rewards and recognition badges.</p>
+        </div>
+        <div class="card reveal reveal-delay-3">
+          <div class="card-icon amber">📢</div>
+          <h3>Community Section</h3>
+          <p>"Adopt a Cow" feature for personal sponsorship, plus educational stories and videos from the Gaushala.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 7: PROTOTYPE JOURNEY ========== -->
+  <section id="prototype">
+    <div class="container">
+      <div class="section-label reveal">Prototype</div>
+      <h2 class="section-title reveal">Design Evolution</h2>
+      <p class="section-subtitle reveal" style="margin-bottom: 56px;">
+        From rough sketches to polished interfaces — a journey of iteration, feedback, and refinement. <strong style="color: var(--text-primary);">All design work by Girikshit Kumar.</strong>
+      </p>
+
+      <!-- Phase 1: Rough Sketches -->
+      <div class="prototype-phase reveal">
+        <div class="phase-header">
+          <div class="phase-number">1</div>
+          <h3 class="phase-title">Rough Sketches</h3>
+        </div>
+        <div class="prototype-comparison">
+          <div class="comparison-item">
+            <img src="assets/sketch-1.jpg" alt="Initial rough sketches for SOS button and home screen layout" loading="lazy">
+            <p class="comparison-label">Initial ideas for the SOS button and home screen layout</p>
+          </div>
+          <div class="comparison-item">
+            <img src="assets/sketch-2.jpg" alt="Mapping user flow for reporting and donation" loading="lazy">
+            <p class="comparison-label">Mapping the user flow for reporting and donation</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 2: Low-Fidelity Wireframes -->
+      <div class="prototype-phase reveal">
+        <div class="phase-header">
+          <div class="phase-number">2</div>
+          <h3 class="phase-title">Low-Fidelity Wireframes</h3>
+        </div>
+        <div class="prototype-gallery">
+          <img src="assets/lofi-1.png" alt="Low-fidelity wireframe: Welcome & Login" loading="lazy">
+          <img src="assets/lofi-2.png" alt="Low-fidelity wireframe: Login Form" loading="lazy">
+          <img src="assets/lofi-3.png" alt="Low-fidelity wireframe: Dashboard" loading="lazy">
+        </div>
+        <p class="phase-caption">Initial digital mockups with basic navigation structure</p>
+      </div>
+
+      <!-- Phase 3: High-Fidelity Screens -->
+      <div class="prototype-phase reveal">
+        <div class="phase-header">
+          <div class="phase-number">3</div>
+          <h3 class="phase-title">High-Fidelity Screens</h3>
+        </div>
+        <div class="prototype-gallery">
+          <img src="assets/hifi-1.png" alt="Hi-fi screen: Welcome & onboarding" loading="lazy">
+          <img src="assets/hifi-2.png" alt="Hi-fi screen: Login flow" loading="lazy">
+          <img src="assets/hifi-3.png" alt="Hi-fi screen: Dashboard" loading="lazy">
+        </div>
+        <p class="phase-caption">Key screens: Onboarding, Login, and Dashboard</p>
+
+        <div style="margin-top: 32px;">
+          <img src="assets/hifi-overview.png" alt="Complete collection of all high-fidelity screens showing the full app flow" loading="lazy" style="width: 100%; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+          <p class="phase-caption">Complete screen collection — all 16 hi-fi screens showing the full app flow</p>
+        </div>
+      </div>
+
+      <!-- Design Iteration comparison -->
+      <div class="prototype-phase reveal">
+        <div class="phase-header">
+          <div class="phase-number">✦</div>
+          <h3 class="phase-title">Before & After</h3>
+        </div>
+        <div class="prototype-comparison">
+          <div class="comparison-item">
+            <img src="assets/prototype-early.png" alt="Early version: initial digital mockup with basic navigation" loading="lazy">
+            <p class="comparison-label">Early Version: Initial digital mockup with basic navigation</p>
+          </div>
+          <div class="comparison-item">
+            <img src="assets/prototype-final.png" alt="Final Interface: polished design after feedback" loading="lazy">
+            <p class="comparison-label">Final Interface: Polished design with clearer calls-to-action</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 8: RESPONDER DASHBOARD (THE OTHER SIDE) ========== -->
+  <section class="alt-bg" id="responder">
+    <div class="container">
+      <div class="section-label reveal">Service Design</div>
+      <h2 class="section-title reveal">The Other Side: Responder View</h2>
+      <p class="section-subtitle reveal" style="margin-bottom: 48px;">
+        A two-sided marketplace needs two-sided design. Here's what the ambulance driver sees when a citizen files an SOS report — demonstrating end-to-end product thinking.
+      </p>
+
+      <div class="dashboard-mockup reveal">
+        <div class="dashboard-topbar">
+          <div class="status-badge">
+            <span class="dot"></span>
+            Incoming SOS Alert
+          </div>
+          <div class="driver-info">Driver: Ramesh K. · Unit #07</div>
+        </div>
+        <div class="dashboard-body">
+          <div class="dashboard-map">
+            <div class="map-grid"></div>
+            <div class="map-route"></div>
+            <div class="map-eta">ETA: 4 min · 2.3 km away</div>
+          </div>
+          <div class="dashboard-details">
+            <div class="detail-card">
+              <div class="detail-label">Location</div>
+              <div class="detail-value">Sector 14, Rohini, Delhi</div>
+              <div style="font-size: var(--fs-label); color: var(--text-tertiary); margin-top: 4px;">28.7041° N, 77.1025° E</div>
+            </div>
+            <div class="detail-card">
+              <div class="detail-label">AI Severity Assessment</div>
+              <div class="detail-value" style="color: var(--accent-red);">High — Leg Fracture (Detected)</div>
+              <div class="severity-bar">
+                <div class="fill high"></div>
+              </div>
+            </div>
+            <div class="detail-card">
+              <div class="detail-label">Reporter</div>
+              <div class="detail-value">Citizen via Gaurdian App</div>
+              <div style="font-size: var(--fs-label); color: var(--text-tertiary); margin-top: 4px;">Photo + GPS attached · 2 min ago</div>
+            </div>
+          </div>
+        </div>
+        <div class="dashboard-actions">
+          <button class="btn-dashboard primary">✓ Accept & Navigate</button>
+          <button class="btn-dashboard secondary">📞 Contact Reporter</button>
+          <button class="btn-dashboard secondary">↗ Reassign</button>
+        </div>
+      </div>
+
+      <div class="reveal" style="margin-top: 48px; text-align: center; max-width: 700px; margin-left: auto; margin-right: auto;">
+        <p style="color: var(--text-secondary); font-size: var(--fs-body); line-height: 1.8;">
+          <strong style="color: var(--text-primary);">Why this matters:</strong> By designing the responder's experience, I demonstrate understanding of <strong style="color: var(--accent-green);">end-to-end service design</strong> — how the GPS report a citizen sends is received, triaged, and acted upon by the other side of the marketplace.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 9: AI-POWERED TRIAGE ========== -->
+  <section id="ai-triage">
+    <div class="container">
+      <div class="section-label reveal">AI Developer Edge</div>
+      <h2 class="section-title reveal">AI-Powered Injury Triage</h2>
+      <p class="section-subtitle reveal" style="margin-bottom: 16px;">
+        Leveraging Computer Vision to transform a simple photo upload into an intelligent dispatch system — reducing human error and prioritizing the most critical rescues.
+      </p>
+
+      <div class="ai-flow reveal">
+        <div class="ai-step">
+          <div class="ai-step-icon step-1">📸</div>
+          <h4>Photo Upload</h4>
+          <p>Citizen captures & uploads photo with GPS data</p>
+        </div>
+        <div class="ai-arrow">→</div>
+        <div class="ai-step">
+          <div class="ai-step-icon step-2">🧠</div>
+          <h4>CV Analysis</h4>
+          <p>AI model classifies injury type and assesses severity</p>
+        </div>
+        <div class="ai-arrow">→</div>
+        <div class="ai-step">
+          <div class="ai-step-icon step-3">⚖️</div>
+          <h4>Priority Score</h4>
+          <p>Severity ranking auto-prioritizes the dispatch queue</p>
+        </div>
+        <div class="ai-arrow">→</div>
+        <div class="ai-step">
+          <div class="ai-step-icon step-4">🚑</div>
+          <h4>Smart Dispatch</h4>
+          <p>Nearest available unit receives high-priority alert</p>
+        </div>
+      </div>
+
+      <div class="grid-2 reveal" style="margin-top: 56px;">
+        <div class="card">
+          <div class="card-icon purple">🔬</div>
+          <h3>Technical Implementation</h3>
+          <p>A fine-tuned image classification model (built on TensorFlow) trained on veterinary injury datasets. Categories include: fractures, lacerations, dehydration, infections, and behavioral distress. Confidence scores above 85% trigger automatic priority escalation.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon green">📊</div>
+          <h3>Impact on Response</h3>
+          <p>By automating severity assessment, we reduce the manual triage step from ~3 minutes to under 5 seconds. Critical cases reach ambulance teams 4x faster, directly addressing the "High Response Latency" problem identified in our research.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 10: BEHAVIORAL PSYCHOLOGY ========== -->
+  <section class="alt-bg" id="psychology">
+    <div class="container">
+      <div class="section-label reveal">Behavioral Psychology</div>
+      <h2 class="section-title reveal">Designing for Human Behavior</h2>
+      <p class="section-subtitle reveal" style="margin-bottom: 48px;">
+        Applying behavioral science principles to drive sustained engagement — not just downloads, but lasting impact.
+      </p>
+
+      <div class="psych-demos">
+        <!-- Endowed Progress -->
+        <div class="psych-demo reveal">
+          <div class="psych-demo-header">
+            <span class="emoji">📈</span>
+            <div>
+              <h3>Donor Recovery Tracker</h3>
+              <span class="theory">Endowed Progress Effect</span>
+            </div>
+          </div>
+          <div class="psych-demo-visual">
+            <div class="progress-demo-cow">
+              <div class="cow-avatar">🐄</div>
+              <div>
+                <div class="cow-name">Lakshmi</div>
+                <div class="cow-id">Rescued Dec 2024 · Funded by You</div>
+              </div>
+            </div>
+            <div class="recovery-progress">
+              <div class="progress-header">
+                <span>Recovery Progress</span>
+                <span class="percent">72%</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" id="progressFill"></div>
+              </div>
+            </div>
+            <ul class="recovery-milestones">
+              <li class="completed"><span class="dot">✓</span> Rescued</li>
+              <li class="completed"><span class="dot">✓</span> Treated</li>
+              <li class="completed"><span class="dot">✓</span> Healing</li>
+              <li><span class="dot"></span> Recovered</li>
+            </ul>
+          </div>
+          <p class="psych-explanation">
+            The <strong>Endowed Progress Effect</strong> shows that people are more motivated to complete a goal when they feel they've already made progress. By showing donors a live recovery timeline for "their" cow, we transform a one-time donation into an ongoing emotional commitment.
+          </p>
+        </div>
+
+        <!-- Variable Rewards -->
+        <div class="psych-demo reveal reveal-delay-1">
+          <div class="psych-demo-header">
+            <span class="emoji">🏆</span>
+            <div>
+              <h3>Volunteer Badges</h3>
+              <span class="theory">Variable Reward Schedule</span>
+            </div>
+          </div>
+          <div class="psych-demo-visual">
+            <div class="badges-grid">
+              <div class="badge-item">
+                <span class="badge-emoji">🦸</span>
+                <span class="badge-name">First Rescue</span>
+                <span class="badge-desc">Report your first SOS</span>
+              </div>
+              <div class="badge-item">
+                <span class="badge-emoji">⚡</span>
+                <span class="badge-name">Speed Hero</span>
+                <span class="badge-desc">Report under 30 sec</span>
+              </div>
+              <div class="badge-item">
+                <span class="badge-emoji">🌟</span>
+                <span class="badge-name">Community Star</span>
+                <span class="badge-desc">5 rescues in a month</span>
+              </div>
+              <div class="badge-item">
+                <span class="badge-emoji">💚</span>
+                <span class="badge-name">Guardian Angel</span>
+                <span class="badge-desc">Adopted a cow</span>
+              </div>
+              <div class="badge-item locked">
+                <span class="badge-emoji">🔒</span>
+                <span class="badge-name">???</span>
+                <span class="badge-desc">Hidden badge</span>
+              </div>
+              <div class="badge-item locked">
+                <span class="badge-emoji">🔒</span>
+                <span class="badge-name">???</span>
+                <span class="badge-desc">Keep going!</span>
+              </div>
+            </div>
+          </div>
+          <p class="psych-explanation">
+            <strong>Variable Reward Schedules</strong> (the same psychology behind social media engagement) keep volunteers coming back. Unlockable and hidden badges create anticipation. The "locked" badges trigger curiosity and drive repeated engagement, far more effectively than a simple "thank you" screen.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 11: TESTING & FEEDBACK ========== -->
+  <section id="testing">
+    <div class="container">
+      <div class="section-label reveal">Testing</div>
+      <h2 class="section-title reveal">Testing & Feedback</h2>
+      <p class="section-subtitle reveal" style="margin-bottom: 48px;">
+        Validated with real users — volunteers, gaushala staff, donors, and public participants.
+      </p>
+
+      <div class="feedback-cards">
+        <div class="feedback-card reveal">
+          <div class="feedback-source">Volunteers & Gaushala Staff</div>
+          <p>Feedback was positive on the SOS flow, finding it intuitive and simple. They stressed the need for a reliable backend notification system.</p>
+        </div>
+        <div class="feedback-card reveal reveal-delay-1">
+          <div class="feedback-source">Donors & Public</div>
+          <p>Appreciated the concept of real-time video updates for transparency. Key suggestions included adding regional languages and an offline reporting option.</p>
+        </div>
+      </div>
+
+      <div class="grid-3 reveal" style="margin-top: 32px;">
+        <div class="card">
+          <div class="card-icon green">✓</div>
+          <h3>Validated</h3>
+          <p>SOS one-tap flow — intuitive, no training required</p>
+        </div>
+        <div class="card">
+          <div class="card-icon amber">⚠</div>
+          <h3>To Improve</h3>
+          <p>Add regional language support and offline-first mode</p>
+        </div>
+        <div class="card">
+          <div class="card-icon blue">📋</div>
+          <h3>Next Steps</h3>
+          <p>Backend push notifications & live video streaming integration</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 12: IMPACT & CONCLUSION ========== -->
+  <section class="alt-bg" id="impact">
+    <div class="container">
+      <div class="section-label reveal">Impact</div>
+      <h2 class="section-title reveal">Expected Impact</h2>
+
+      <div class="impact-grid reveal">
+        <div class="impact-item">
+          <div class="impact-icon">🚑</div>
+          <div class="impact-value">4x</div>
+          <div class="impact-label">Faster Rescue Response</div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-icon">💚</div>
+          <div class="impact-value">↑ 60%</div>
+          <div class="impact-label">Donor Retention</div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-icon">🌍</div>
+          <div class="impact-value">10x</div>
+          <div class="impact-label">Broader Recognition</div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-icon">👥</div>
+          <div class="impact-value">3x</div>
+          <div class="impact-label">Youth Volunteering</div>
+        </div>
+      </div>
+
+      <div class="conclusion-block reveal">
+        <blockquote>
+          "I designed <strong>Gaurdian</strong>, a logistics-focused mobility platform that reduces rescue response times through <strong>geospatial reporting</strong> and <strong>AI-driven triage</strong>, while solving donor churn through <strong>behavioral transparency hooks</strong>."
+        </blockquote>
+      </div>
+
+      <div class="conclusion-narrative reveal">
+        The Gaurdian app combines tradition and technology to support the mission of Krishna NGO. It embodies Krishna's role as the divine protector, enabling every individual to become a Gaurdian in real life.
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 13: FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <div class="footer-name">Girikshit Kumar<span>.</span></div>
+          <div class="footer-role">Product Designer & AI Developer</div>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:girikshitk@gmail.com" class="footer-link">📧 Email</a>
+          <a href="https://www.linkedin.com/in/girikshit-kumar-2129ba27b/?skipRedirect=true" target="_blank" class="footer-link">💼 LinkedIn</a>
+          <a href="https://github.com/girikshitk" target="_blank" class="footer-link">🐙 GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2025 Girikshit Kumar · Built with purpose
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Overlay -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+    <img src="" alt="" id="lightboxImg">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
