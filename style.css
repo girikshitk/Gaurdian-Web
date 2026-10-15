@@ -1847,7 +1847,6 @@ section img:hover {
     margin-right: 8px;
   }
 
-  .nav-cta span:nth-of-type(1),
   .nav-cta span:last-child {
     display: none;
   }
@@ -2060,10 +2059,6 @@ section img:hover {
   }
 
   /* Psych Demos */
-  .insight-card {
-    padding: var(--s-3);
-  }
-
   .insight-card {
     padding: var(--s-3);
   }
