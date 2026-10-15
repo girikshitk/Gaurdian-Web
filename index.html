@@ -7,6 +7,8 @@
   <meta name="keywords" content="Gaurdian, cow rescue, product design, case study, Girikshit Kumar, UX design, AI developer">
   <meta name="author" content="Girikshit Kumar">
   <title>Gaurdian — Case Study by Girikshit Kumar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,13 +27,16 @@
         <li><a href="#ai-triage">AI Triage</a></li>
         <li><a href="#impact">Impact</a></li>
       </ul>
-      <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+      <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
 
   <!-- ========== SECTION 1: HERO ========== -->
   <section class="hero" id="hero">
-    <div class="container hero-content">
+    <div class="hero-content">
       <div class="hero-eyebrow">UX Case Study</div>
       <h1 class="hero-title">
         <span class="highlight">Gaurdian</span>
@@ -74,18 +79,12 @@
           <p class="section-subtitle" style="margin-bottom: 24px;">
             Shree Krishna Gaushala, in Sultanpur Dabas, is a sanctuary where over <strong style="color: var(--accent-green);">8,500 cows</strong> are lovingly cared for with devotion and dignity.
           </p>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
-            <li style="display: flex; align-items: center; gap: 10px; color: var(--text-secondary); font-size: var(--fs-body);">
-              <span style="color: var(--accent-green);">→</span> Rescues cows from neglect and danger
-            </li>
-            <li style="display: flex; align-items: center; gap: 10px; color: var(--text-secondary); font-size: var(--fs-body);">
-              <span style="color: var(--accent-green);">→</span> Provides shelter, nutritious food, and medical care
-            </li>
-            <li style="display: flex; align-items: center; gap: 10px; color: var(--text-secondary); font-size: var(--fs-body);">
-              <span style="color: var(--accent-green);">→</span> Ensures a safe and respectful environment for all animals
-            </li>
+          <ul class="context-list">
+            <li><span class="arrow">→</span> Rescues cows from neglect and danger</li>
+            <li><span class="arrow">→</span> Provides shelter, nutritious food, and medical care</li>
+            <li><span class="arrow">→</span> Ensures a safe and respectful environment for all animals</li>
           </ul>
-          <div class="context-stats" style="margin-top: 32px;">
+          <div class="context-stats">
             <div class="stat-item">
               <div class="stat-number" data-target="8500">8,500+</div>
               <div class="stat-label">Cows Rescued</div>
@@ -175,10 +174,10 @@
         </div>
       </div>
 
-      <div class="reveal" style="margin-top: 48px; padding: 32px; background: var(--bg-card); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+      <div class="reveal" style="margin-top: 48px; padding: 32px; background: var(--bg-card); border-radius: var(--radius); border: 1px solid var(--border);">
         <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-          <span style="font-size: 1.3rem;">🧠</span>
-          <h3 style="font-size: var(--fs-h3); font-weight: 700;">Behavioral Insight</h3>
+          <span style="font-size: 1.2rem;">🧠</span>
+          <h3 style="font-family: var(--font-display); font-size: var(--fs-h3); font-weight: 600;">Behavioral Insight</h3>
         </div>
         <p style="color: var(--text-secondary); font-size: var(--fs-body); line-height: 1.8;">
           Our research revealed that <strong style="color: var(--accent-amber);">donors desire a stronger emotional connection</strong> to their contributions — not just a receipt, but visible proof of impact. This insight from <strong style="color: var(--text-primary);">Behavioral Psychology</strong> directly shaped our transparency and progress-tracking features, leveraging the <em>Endowed Progress Effect</em> to sustain donor engagement.
@@ -295,7 +294,7 @@
         <p class="phase-caption">Key screens: Onboarding, Login, and Dashboard</p>
 
         <div style="margin-top: 32px;">
-          <img src="assets/hifi-overview.png" alt="Complete collection of all high-fidelity screens showing the full app flow" loading="lazy" style="width: 100%; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+          <img src="assets/hifi-overview.png" alt="Complete collection of all high-fidelity screens showing the full app flow" loading="lazy" style="width: 100%; border-radius: var(--radius); border: 1px solid var(--border);">
           <p class="phase-caption">Complete screen collection — all 16 hi-fi screens showing the full app flow</p>
         </div>
       </div>
@@ -347,11 +346,11 @@
             <div class="detail-card">
               <div class="detail-label">Location</div>
               <div class="detail-value">Sector 14, Rohini, Delhi</div>
-              <div style="font-size: var(--fs-label); color: var(--text-tertiary); margin-top: 4px;">28.7041° N, 77.1025° E</div>
+              <div style="font-family: var(--font-mono); font-size: 0.62rem; color: rgba(255,255,255,0.4); margin-top: 4px;">28.7041° N, 77.1025° E</div>
             </div>
             <div class="detail-card">
               <div class="detail-label">AI Severity Assessment</div>
-              <div class="detail-value" style="color: var(--accent-red);">High — Leg Fracture (Detected)</div>
+              <div class="detail-value" style="color: #FF5252;">High — Leg Fracture (Detected)</div>
               <div class="severity-bar">
                 <div class="fill high"></div>
               </div>
@@ -359,7 +358,7 @@
             <div class="detail-card">
               <div class="detail-label">Reporter</div>
               <div class="detail-value">Citizen via Gaurdian App</div>
-              <div style="font-size: var(--fs-label); color: var(--text-tertiary); margin-top: 4px;">Photo + GPS attached · 2 min ago</div>
+              <div style="font-family: var(--font-mono); font-size: 0.62rem; color: rgba(255,255,255,0.4); margin-top: 4px;">Photo + GPS attached · 2 min ago</div>
             </div>
           </div>
         </div>
@@ -568,7 +567,7 @@
   </section>
 
   <!-- ========== SECTION 12: IMPACT & CONCLUSION ========== -->
-  <section class="alt-bg" id="impact">
+  <section class="dark-section" id="impact">
     <div class="container">
       <div class="section-label reveal">Impact</div>
       <h2 class="section-title reveal">Expected Impact</h2>

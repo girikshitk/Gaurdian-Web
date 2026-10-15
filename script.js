@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.getElementById('navLinks');
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 80) {
+    if (window.scrollY > 40) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (navToggle) {
     navToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
-      navToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+      navToggle.classList.toggle('open');
     });
   }
 
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('active');
-      navToggle.textContent = '☰';
+      navToggle.classList.remove('open');
     });
   });
 
@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        // Don't unobserve — keeps it visible once triggered
       }
     });
   }, {
@@ -73,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function update(currentTime) {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // Ease out cubic
       const eased = 1 - Math.pow(1 - progress, 3);
       const current = Math.floor(eased * target);
 
@@ -87,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(update);
   }
 
-  // Observe stat numbers for counter animation
   document.querySelectorAll('.stat-number[data-target]').forEach(el => {
     const counterObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -122,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
         const navHeight = navbar.offsetHeight;
-        const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight - 20;
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight - 12;
 
         window.scrollTo({
           top: targetPosition,
@@ -149,9 +146,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     navAnchors.forEach(a => {
-      a.style.color = '';
+      a.classList.remove('active');
       if (a.getAttribute('href') === `#${current}`) {
-        a.style.color = 'var(--accent-green)';
+        a.classList.add('active');
       }
     });
   });
@@ -159,11 +156,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // ========== BADGE HOVER MICRO-INTERACTION ==========
   document.querySelectorAll('.badge-item:not(.locked)').forEach(badge => {
     badge.addEventListener('mouseenter', () => {
-      badge.querySelector('.badge-emoji').style.transform = 'scale(1.3) rotate(10deg)';
-      badge.querySelector('.badge-emoji').style.transition = 'transform 0.3s var(--ease-out)';
+      const emoji = badge.querySelector('.badge-emoji');
+      if (emoji) {
+        emoji.style.transform = 'scale(1.25) rotate(8deg)';
+        emoji.style.transition = 'transform 0.3s var(--ease-out)';
+      }
     });
     badge.addEventListener('mouseleave', () => {
-      badge.querySelector('.badge-emoji').style.transform = 'scale(1) rotate(0deg)';
+      const emoji = badge.querySelector('.badge-emoji');
+      if (emoji) {
+        emoji.style.transform = 'scale(1) rotate(0deg)';
+      }
     });
   });
 
@@ -175,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (scrolled < window.innerHeight) {
         const heroContent = hero.querySelector('.hero-content');
         if (heroContent) {
-          heroContent.style.transform = `translateY(${scrolled * 0.15}px)`;
+          heroContent.style.transform = `translateY(${scrolled * 0.12}px)`;
           heroContent.style.opacity = 1 - (scrolled / (window.innerHeight * 0.8));
         }
       }
@@ -187,7 +190,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxClose = document.getElementById('lightboxClose');
 
-  // Click any image inside a section to open lightbox
   document.querySelectorAll('section img').forEach(img => {
     img.addEventListener('click', () => {
       lightboxImg.src = img.src;
@@ -197,7 +199,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Close lightbox
   function closeLightbox() {
     lightbox.classList.remove('active');
     document.body.style.overflow = '';
@@ -212,14 +213,3 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
-
-// ========== POP-IN KEYFRAME (injected) ==========
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes popIn {
-    0% { transform: scale(0.5); opacity: 0; }
-    70% { transform: scale(1.1); }
-    100% { transform: scale(1); opacity: 1; }
-  }
-`;
-document.head.appendChild(style);
