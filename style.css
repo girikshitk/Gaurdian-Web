@@ -197,8 +197,8 @@ section.dark-section {
 }
 
 .navbar .container {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   width: 100%;
   max-width: var(--max-w);
@@ -223,6 +223,7 @@ section.dark-section {
 
 .nav-links {
   display: flex;
+  justify-content: center;
   gap: var(--s-3);
   list-style: none;
   align-items: center;
@@ -260,6 +261,45 @@ section.dark-section {
 
 .nav-links a.active {
   color: var(--text-primary);
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  transition: all var(--dur) var(--ease-out);
+  flex-shrink: 0;
+}
+
+.nav-cta svg {
+  color: #0A66C2;
+  transition: transform var(--dur) ease;
+}
+
+.nav-cta span:last-child {
+  opacity: 0.4;
+  transition: transform var(--dur) ease, opacity var(--dur) ease;
+}
+
+.nav-cta:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-1px);
+}
+
+.nav-cta:hover svg {
+  transform: scale(1.1);
+}
+
+.nav-cta:hover span:last-child {
+  opacity: 1;
+  transform: translate(2px, -2px);
 }
 
 .nav-mobile-toggle {
@@ -1155,6 +1195,76 @@ section.dark-section {
 /* ============================================
    BEHAVIORAL PSYCHOLOGY
    ============================================ */
+.insight-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--s-4);
+  max-width: 760px;
+}
+
+.insight-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: var(--s-2);
+}
+
+.insight-heading span {
+  font-size: 1.35rem;
+}
+
+.insight-heading h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+}
+
+.insight-card p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.insight-card strong {
+  color: var(--accent-amber);
+}
+
+.mini-progress {
+  height: 8px;
+  margin-top: var(--s-3);
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.mini-progress span {
+  display: block;
+  width: 72%;
+  height: 100%;
+  background: var(--accent-green);
+  border-radius: inherit;
+  transform-origin: left;
+  animation: progressIn 1s var(--ease-out) both;
+}
+
+.mini-progress-label {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  color: var(--text-tertiary);
+}
+
+.mini-progress-label strong {
+  color: var(--accent-green);
+}
+
+@keyframes progressIn {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
 .psych-demos {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1724,7 +1834,21 @@ section img:hover {
   }
 
   /* Nav */
+  .navbar .container {
+    display: flex;
+  }
+
   .nav-links {
+    display: none;
+  }
+
+  .nav-cta {
+    margin-left: auto;
+    margin-right: 8px;
+  }
+
+  .nav-cta span:nth-of-type(1),
+  .nav-cta span:last-child {
     display: none;
   }
 
@@ -1936,6 +2060,14 @@ section img:hover {
   }
 
   /* Psych Demos */
+  .insight-card {
+    padding: var(--s-3);
+  }
+
+  .insight-card {
+    padding: var(--s-3);
+  }
+
   .psych-demo {
     padding: var(--s-2);
   }
