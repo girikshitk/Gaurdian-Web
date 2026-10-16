@@ -968,11 +968,6 @@ section.dark-section {
   align-items: stretch;
 }
 
-.prototype-strip--two {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  max-width: 420px;
-}
-
 .prototype-strip--eight {
   grid-template-columns: repeat(8, minmax(0, 1fr));
 }
@@ -2191,10 +2186,6 @@ section img:hover {
   }
 
   /* Prototype */
-  .prototype-strip--two {
-    max-width: none;
-  }
-
   .prototype-strip--eight {
     grid-template-columns: repeat(8, 96px);
     overflow-x: auto;
