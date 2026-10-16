@@ -185,6 +185,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ========== PROTOTYPE MARQUEE — DUPLICATE FOR SEAMLESS LOOP ==========
+  document.querySelectorAll('.prototype-track').forEach(track => {
+    track.innerHTML += track.innerHTML;
+  });
+
   // ========== LIGHTBOX (Click to View Fullscreen) ==========
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
